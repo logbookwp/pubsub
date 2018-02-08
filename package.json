@@ -12,7 +12,7 @@
   "scripts": {
     "deploy": "yes | gcloud app deploy --project tarostats",
     "start": "node app.js",
-    "logs": "gcloud app logs tail -s default --project tarostats",
+    "logs": "gcloud app logs read --project tarostats",
     "test": "npm run system-test"
   },
   "dependencies": {
