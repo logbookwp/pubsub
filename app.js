@@ -6,23 +6,8 @@ const publisher = require( './lib/publisher' );
 
 const app = express();
 
-app.set('view engine', 'pug');
-app.set('views', './views');
-
-app.get( '/', ( req, res ) => {
-  res.status( 200 )
-    .render( 'index', {
-      title: 'Hey',
-      message: 'Hello there!'
-    } );
-} );
-
-app.get( '/api', ( req, res ) => {
-  res.status( 200 ).json( { hello: "world" } ).end();
-} );
-
 app.get( '/publish/checkstats', ( req, res ) => {
-  if ( 'true' === req.headers['x-appengine-cron'] || 8080 === process.env.PORT
+  if ( 'true' === req.headers['x-appengine-cron'] || "8080" === process.env.PORT
 
  ) {
     const pub = new publisher( 'tarostats', 'checkstats' );
@@ -33,6 +18,10 @@ app.get( '/publish/checkstats', ( req, res ) => {
   } else {
     res.status( 403 ).send( 'Forbidden' ).end();
   }
+} );
+
+app.get( '/*', ( req, res ) => {
+  res.status( 403 ).send( 'Forbidden' ).end();
 } );
 
 // Start the server
