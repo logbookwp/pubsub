@@ -10,7 +10,7 @@
     "url": "https://github.com/sitestatus/app.git"
   },
   "scripts": {
-    "deploy": "gcloud app deploy --project tarostats",
+    "deploy": "yes | gcloud app deploy --project tarostats",
     "start": "node app.js",
     "logs": "gcloud app logs tail -s default --project tarostats",
     "test": "npm run system-test"
