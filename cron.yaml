@@ -1,0 +1,4 @@
+cron:
+- description: Push a "checkstats" onto pubsub every minutes
+  url: /publish/checkstats
+  schedule: every 1 minutes
