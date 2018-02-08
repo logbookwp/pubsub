@@ -5,6 +5,9 @@
   "private": true,
   "license": "MIT",
   "author": "Takayuki Miyauchi",
+  "engines": {
+    "node": "8.x"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sitestatus/app.git"

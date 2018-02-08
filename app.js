@@ -11,7 +11,7 @@ app.get( '/publish/checkstats', ( req, res ) => {
 
  ) {
     const pub = new publisher( 'tarostats', 'checkstats' );
-    pub.send( 'Publish from cron on GAE.', function( results ) {
+    pub.send( { url: 'https://miya.io/' }, function( results ) {
       console.log( results )
     } );
     res.status( 200 ).send( 'OK' ).end();
