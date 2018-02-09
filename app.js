@@ -10,7 +10,7 @@ app.get( '/publish/checkstats', ( req, res ) => {
   if ( 'true' === req.headers['x-appengine-cron'] || "8080" === process.env.PORT
 
  ) {
-    const pub = new publisher( 'tarostats', 'checkstats' );
+    const pub = new publisher( 'tarostats', 'checkstatus' );
     pub.send( { url: 'https://miya.io/' }, function( results ) {
       console.log( results )
     } );
